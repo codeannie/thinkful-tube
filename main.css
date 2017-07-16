@@ -1,0 +1,54 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+main {
+    margin-top: 75px;
+}
+    
+.bar-container {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    padding: 10px; 
+    background-color: black;
+}
+
+h1, #search{
+    color: white;
+    display: inline-block;
+}
+
+#search {
+}
+
+h2 {
+    margin-top: 100px;
+    padding: 10px;
+}
+
+.results-display {
+     margin-top: 20px; 
+     margin: auto;
+     width: 75%;
+     height: 75%; 
+}
+
+.thumbnail {
+    height: 50%;
+    width: 50%;
+}
+
+.video {
+    display: inline-block;
+    text-align: center;
+}
