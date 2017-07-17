@@ -1,6 +1,5 @@
 const YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"; 
-const YOUTUBE_API_KEY = config.YOUTUBE_API_KEY; 
-
+const YOUTUBE_API_KEY = "AIzaSyC45wXojqpkNx5U7svl3shem3GYDt6ov7M"; 
 
 function listenforInput() {
 $("#search").submit(event => {
