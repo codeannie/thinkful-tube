@@ -1,5 +1,5 @@
 const YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"; 
-const YOUTUBE_API_KEY = "AIzaSyA6UrBuVh2gcMxldErJRgMEt4TkKLUxxDk"; 
+const YOUTUBE_API_KEY = config.YOUTUBE_API_KEY; 
 
 
 function listenforInput() {
