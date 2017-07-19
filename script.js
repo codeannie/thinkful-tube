@@ -4,6 +4,8 @@ const YOUTUBE_API_KEY = "AIzaSyC45wXojqpkNx5U7svl3shem3GYDt6ov7M";
 function listenforInput() {
 $("#search").submit(event => {
     event.preventDefault();
+
+    
     var searchTerm = $(".js-searchTerm").val();
     getYoutubeResults(searchTerm);
 })
@@ -21,7 +23,9 @@ var getYoutubeResults = function(searchTerm) {
 
 //render search results
 function renderVideos(data) {
-    $(".results-display").empty();
+    const resultsElem = $('.js-results');
+
+    let videoHTML = "";
     for (i = 0; i < data.items.length; i+=1) {
         const item = data.items[i];
         const videoSnippet = item.snippet;
@@ -31,7 +35,7 @@ function renderVideos(data) {
         const videoThumbnail = videoSnippet.thumbnails.default.url; 
         const videoChannelTitle = videoSnippet.channelTitle; 
         const videoChannelId = videoSnippet.channelId; 
-        const newElem = (
+        videoHTML += (
             // `<div class="col-4">  
             `<div class="video">
                 <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
@@ -42,8 +46,15 @@ function renderVideos(data) {
              </div>`
               //  </div>` 
         );
-        $(".results-display").append(newElem);
   }
+    resultsElem
+        .find(".results-videos")
+        .empty()
+        .append(videoHTML)
+        .end()
+        .find(".results-header")
+        .text(`${data.items.length} results:`)
+        .focus();
 }
 
 listenforInput();
